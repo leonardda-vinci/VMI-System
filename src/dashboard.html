@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VMI System</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="input.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="../src/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../src/assets/css/nucleo-icons.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body class="font-sans bg-gray-50 antialiased font-normal text-base leading-default text-slate-500 flex">
+        <!--Sidenav bar-->
+  <aside class="max-w-63 ease-nav-brand z-990 inset-y-0 my-4 ml-4 block -translate-x-full flex-wrap items-center justify-between rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent hidden md:block" >
+  <div class="h-20">
+    <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
+    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
+
+              <!-- logo of the system -->
+              <!-- <img src="" alt=""> -->
+
+              <!-- Title of the System -->
+    <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">VMI System Dashboard</span>
+    </a>
+  </div>
+
+  <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent">
+          
+    <mat-drawer-container class="items-center block w-full h-sidenav grow basis-full mt-5">
+      <mat-list class="flex flex-col pl-0 mb-0">
+        <mat-list-item class="mt-3 w-full">
+                  <a href="dashboard.html" class="py-2.7 shadow-xl text-sm ease-nav-brand my-0 mx-1 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors p-2">
+                    <div class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                      <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>shop</title>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <g transform="translate(1716.000000, 291.000000)">
+                              <g transform="translate(0.000000, 148.000000)">
+                                <path
+                                  class="opacity-60"
+                                  d="M46.7199583,10.7414583 L40.8449583,0.949791667 C40.4909749,0.360605034 39.8540131,0 39.1666667,0 L7.83333333,0 C7.1459869,0 6.50902508,0.360605034 6.15504167,0.949791667 L0.280041667,10.7414583 C0.0969176761,11.0460037 -1.23209662e-05,11.3946378 -1.23209662e-05,11.75 C-0.00758042603,16.0663731 3.48367543,19.5725301 7.80004167,19.5833333 L7.81570833,19.5833333 C9.75003686,19.5882688 11.6168794,18.8726691 13.0522917,17.5760417 C16.0171492,20.2556967 20.5292675,20.2556967 23.494125,17.5760417 C26.4604562,20.2616016 30.9794188,20.2616016 33.94575,17.5760417 C36.2421905,19.6477597 39.5441143,20.1708521 42.3684437,18.9103691 C45.1927731,17.649886 47.0084685,14.8428276 47.0000295,11.75 C47.0000295,11.3946378 46.9030823,11.0460037 46.7199583,10.7414583 Z"
+                                ></path>
+                                <path
+                                  class=""
+                                  d="M39.198,22.4912623 C37.3776246,22.4928106 35.5817531,22.0149171 33.951625,21.0951667 L33.92225,21.1107282 C31.1430221,22.6838032 27.9255001,22.9318916 24.9844167,21.7998837 C24.4750389,21.605469 23.9777983,21.3722567 23.4960833,21.1018359 L23.4745417,21.1129513 C20.6961809,22.6871153 17.4786145,22.9344611 14.5386667,21.7998837 C14.029926,21.6054643 13.533337,21.3722507 13.0522917,21.1018359 C11.4250962,22.0190609 9.63246555,22.4947009 7.81570833,22.4912623 C7.16510551,22.4842162 6.51607673,22.4173045 5.875,22.2911849 L5.875,44.7220845 C5.875,45.9498589 6.7517757,46.9451667 7.83333333,46.9451667 L19.5833333,46.9451667 L19.5833333,33.6066734 L27.4166667,33.6066734 L27.4166667,46.9451667 L39.1666667,46.9451667 C40.2482243,46.9451667 41.125,45.9498589 41.125,44.7220845 L41.125,22.2822926 C40.4887822,22.4116582 39.8442868,22.4815492 39.198,22.4912623 Z"
+                                ></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
+                  </a>
+        </mat-list-item>
+
+        <mat-list-item class="mt-3 w-full">
+                  <a href="products.html" class="py-2.7 text-sm ease-nav-brand my-0 flex items-center whitespace-nowrap px-4 transition-colors">
+                    <div class="shadow-lg mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                      <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>office</title>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <g transform="translate(1716.000000, 291.000000)">
+                              <g transform="translate(153.000000, 2.000000)">
+                                <path class="fill-slate-800 opacity-60" d="M12.25,17.5 L8.75,17.5 L8.75,1.75 C8.75,0.78225 9.53225,0 10.5,0 L31.5,0 C32.46775,0 33.25,0.78225 33.25,1.75 L33.25,12.25 L29.75,12.25 L29.75,3.5 L12.25,3.5 L12.25,17.5 Z"></path>
+                                <path class="fill-slate-800" d="M40.25,14 L24.5,14 C23.53225,14 22.75,14.78225 22.75,15.75 L22.75,38.5 L19.25,38.5 L19.25,22.75 C19.25,21.78225 18.46775,21 17.5,21 L1.75,21 C0.78225,21 0,21.78225 0,22.75 L0,40.25 C0,41.21775 0.78225,42 1.75,42 L40.25,42 C41.21775,42 42,41.21775 42,40.25 L42,15.75 C42,14.78225 41.21775,14 40.25,14 Z M12.25,36.75 L7,36.75 L7,33.25 L12.25,33.25 L12.25,36.75 Z M12.25,29.75 L7,29.75 L7,26.25 L12.25,26.25 L12.25,29.75 Z M35,36.75 L29.75,36.75 L29.75,33.25 L35,33.25 L35,36.75 Z M35,29.75 L29.75,29.75 L29.75,26.25 L35,26.25 L35,29.75 Z M35,22.75 L29.75,22.75 L29.75,19.25 L35,19.25 L35,22.75 Z"></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Products</span>
+                  </a>
+        </mat-list-item>
+
+        <mat-list-item class="mt-3 w-full">
+                  <a href="category.html" class="py-2.7 text-sm ease-nav-brand my-0 flex items-center whitespace-nowrap px-4 transition-colors">
+                    <div class="shadow-xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current stroke-0 text-center xl:p-2.5">
+                      <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>credit-card</title>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <g transform="translate(1716.000000, 291.000000)">
+                              <g transform="translate(453.000000, 454.000000)">
+                                <path class="fill-slate-800 opacity-60" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
+                                <path class="fill-slate-800" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Category</span>
+                  </a>
+        </mat-list-item>
+
+        <mat-list-item class="mt-3 w-full">
+                  <a href="brand.html" class="py-2.7 text-sm ease-nav-brand my-0 flex items-center whitespace-nowrap px-4 transition-colors">
+                    <div class="shadow-xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                      <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>box-3d-50</title>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g transform="translate(-2319.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <g transform="translate(1716.000000, 291.000000)">
+                              <g transform="translate(603.000000, 0.000000)">
+                                <path class="fill-slate-800" d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"></path>
+                                <path class="fill-slate-800 opacity-60" d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"></path>
+                                <path class="fill-slate-800 opacity-60" d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Brand</span>
+                  </a>
+        </mat-list-item>
+
+        <mat-list-item class="mt-3 w-full">
+                  <a href="print_barcode.html" class="py-2.7 text-sm ease-nav-brand my-0 flex items-center whitespace-nowrap px-4 transition-colors">
+                    <div class="shadow-xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                      <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>settings</title>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <g transform="translate(1716.000000, 291.000000)">
+                              <g transform="translate(304.000000, 151.000000)">
+                                <polygon class="fill-slate-800 opacity-60" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
+                                <path class="fill-slate-800 opacity-60" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
+                                <path class="fill-slate-800" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Print Barcode</span>
+                  </a>
+        </mat-list-item>
+
+        <mat-list-item class="mt-3 w-full">
+                  <a href="profile.html" class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap transition-colors">
+                    <div class="shadow-xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                      <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>customer-support</title>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <g transform="translate(1716.000000, 291.000000)">
+                              <g transform="translate(1.000000, 0.000000)">
+                                <path class="fill-slate-800 opacity-60" d="M45,0 L26,0 C25.447,0 25,0.447 25,1 L25,20 C25,20.379 25.214,20.725 25.553,20.895 C25.694,20.965 25.848,21 26,21 C26.212,21 26.424,20.933 26.6,20.8 L34.333,15 L45,15 C45.553,15 46,14.553 46,14 L46,1 C46,0.447 45.553,0 45,0 Z"></path>
+                                <path class="fill-slate-800" d="M22.883,32.86 C20.761,32.012 17.324,31 13,31 C8.676,31 5.239,32.012 3.116,32.86 C1.224,33.619 0,35.438 0,37.494 L0,41 C0,41.553 0.447,42 1,42 L25,42 C25.553,42 26,41.553 26,41 L26,37.494 C26,35.438 24.776,33.619 22.883,32.86 Z"></path>
+                                <path class="fill-slate-800" d="M13,28 C17.432,28 21,22.529 21,18 C21,13.589 17.411,10 13,10 C8.589,10 5,13.589 5,18 C5,22.529 8.568,28 13,28 Z"></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Profile</span>
+                  </a>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer-container>
+  </aside>
+        
+        <!-- main -->
+        <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen bg-gray-50 transition-all duration-200">
+          <nav class="absolute z-20 flex flex-wrap items-center justify-between w-full px-6 py-2 text-whtie transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start" navbar-profile navbar-scroll="true">
+              <div class="flex items-center justify-between w-full px-6 py-1 mx-auto flex-wrap inherit">
+                  <nav>
+                      <mat-list class="flex flex-wrap pt-1 bg-transparent rounded-lg sm:mr-16">
+                          <mat-list-item class="leading-normal text-sm">
+                              <a href="javascript:;" class="opacity-50 text-slate-700">Pages</a>
+                          </mat-list-item>
+                          <mat-list-item class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']" aria-current="page">
+                              Dashboard
+                          </mat-list-item>
+                      </mat-list>
+                      <h6 class="mb-0 font-bold capitalize text-gray-700">Dashboard</h6>
+                  </nav>
+
+                  <div class="flex items-center justify-between mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
+                      <div class="flex items-center md:ml-auto md:pr-4">
+                          <div class="relative flex items-stretch w-full transition-all rounded-lg ease-soft hidden md:block">
+                              <span class="text-sm ease-soft leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
+                                  <i class="fas fa-search"></i>
+                              </span>
+                              <input type="text" class="pl-8 text-sm focus:shadow-soft-primary-outline ease-soft w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchisa-300 focus:outline-none focus:transition-shadow" placeholder="Type here...">
+                          </div>
+                      </div>
+                      <mat-list class="flex justify-end pl-0 mb-0 list-none md-max:w-full">
+                          <mat-list-item>
+                              <a href="#" class="block md:px-0 px-2 flex items-center sm:flex py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500">
+                                  <i class="fa fa-user sm:mr-1"></i>
+                                  <span class="hidden sm:inline">Sign In</span>
+                              </a>
+                          </mat-list-item>
+      
+                          <mat-list-item class="flex items-center pl-4 xl:hidden">
+                              <a href="javascript:;" class="block p-0 transition-all ease-nav-brand text-sm text-slate-500" sidenav-trigger>
+                                  <div class="w-5 overflow-hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                    </svg>
+                                    
+                                  </div>
+                              </a>
+                          </mat-list-item>
+
+                          <mat-list-item class="flex items-center px-4">
+                            <a href="javascript:;" class="p-0 transition-all text-sm text-sm ease-nav-brand text-slate-500">
+                              <i flex-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
+                            </a>
+                          </mat-list-item>
+
+
+
+                          <!-- Notifications -->
+                          <mat-list-item class="relative flex items-center pr-2">
+                            <p class="hidden transform-dropdown-show"></p>
+                            <a href="javascript:;" class="block p-0 transition-all text-sm ease-nav-brand text-slate-500" dropdown-trigger area-expanded="false">
+                              <i class="cursor-pointer fa fa-bell"></i>
+                            </a>
+
+                            <mat-list dropdown-menu class="text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease-soft lg:shadow-soft-3xl duration-250 min-w-44 before:sm:right-7.5 before:text-5.5 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer">
+                              <mat-list-item class="relative mb-2">
+                                <a href="javascript:;" class="ease-soft py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors">
+                                  <div class="flex py-1">
+                                    <div class="my-auto">
+                                      <img src="" alt="" class="inline-flex items-center justify-center mr-4 text-white text-sm h-9 w-9 max-w-none rounded-xl" />
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                      <h6 class="mb-1 font-normal leading-normal text-sm"><span class="font-semibold">New messages</span></h6>
+                                      <p class="mb-0 leading-tight text-xs text-slate-400">
+                                        <i class="mr-1 fa fa-clock"></i>
+                                        13 minutes
+                                      </p>
+                                    </div>
+                                  </div>
+                                </a>
+                              </mat-list-item>
+
+                              <mat-list-item class="relative mb-2">
+                                <a href="javascript:;" class="ease-soft py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700">
+                                  <div class="flex py-1">
+                                    <div class="my-auto">
+                                      <img src="" class="inline-flex items-center justify-center mr-4 text-white text-sm bg-gradient-to-tl from-gray-900 to-slate-800 h-9 w-9 max-w-none rounded-xl">
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                      <h6 class="mb-1 font-normal leading-normal text-sm">
+                                        <span class="font-semibold">New album</span>
+                                        by Travis Scott
+                                      </h6>
+                                      <p class="mb-0 leading-tight text-xs text-slate-400">
+                                        <i class="mr-1 fa fa-clock"></i>
+                                        1 day
+                                      </p>
+                                    </div>
+                                  </div>
+                                </a>
+                              </mat-list-item>
+
+                              <mat-list-item class="relative">
+                                <a href="javascrit:;" class="ease-soft py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700">
+                                  <div class="flex py-1">
+                                    <div class="inline-flex items-center justify-center my-auto  mr-4 transition-all duration-200 ease-nav-brand text-sm bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xm">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="200" height="200">
+                                        <path fill="#FFFFFF" d="M432 0H80C53.192 0 32 21.192 32 48v416c0 26.808 21.192 48 48 48h352c26.808 0 48-21.192 48-48V48c0-26.808-21.192-48-48-48zM208 464H80c-8.824 0-16-7.176-16-16V160h160v304zm224 0H240V160h192v288c0 8.824-7.176 16-16 16zm0-336H240V48h192v80z"/>
+                                        <path fill="#FFFFFF" d="M176 208c0 4.418-3.582 8-8 8H88c-4.418 0-8-3.582-8-8s3.582-8 8-8h80c4.418 0 8 3.582 8 8zM176 272c0 4.418-3.582 8-8 8H88c-4.418 0-8-3.582-8-8s3.582-8 8-8h80c4.418 0 8 3.582 8 8zM176 336c0 4.418-3.582 8-8 8H88c-4.418 0-8-3.582-8-8s3.582-8 8-8h80c4.418 0 8 3.582 8 8zM432 64h-96c-4.418 0-8-3.582-8-8s3.582-8 8-8h96c4.418 0 8 3.582 8 8s-3.582 8-8 8zM432 128h-96c-4.418 0-8-3.582-8-8s3.582-8 8-8h96c4.418 0 8 3.582 8 8s-3.582 8-8 8zM432 192h-96c-4.418 0-8-3.582-8-8s3.582-8 8-8h96c4.418 0 8 3.582 8 8s-3.582 8-8 8zM432 256h-96c-4.418 0-8-3.582-8-8s3.582-8 8-8h96c4.418 0 8 3.582 8 8s-3.582 8-8 8zM432 320h-96c-4.418 0-8-3.582-8-8s3.582-8 8-8h96c4.418 0 8 3.582 8 8s-3.582 8-8 8zM432 384h-96c-4.418 0-8-3.582-8-8s3.582-8 8-8h96c4.418 0 8 3.582 8 8s-3.582 8-8 8zM432 448h-96c-4.418 0-8-3.582-8-8s3.582-8 8-8h96c4.418 0 8 3.582 8 8s-3.582 8-8 8z"/>
+                                      </svg>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                      <h6 class="mb-1 font-normal leading-normal text-sm">Payment successfully completed</h6>
+                                      <p class="mb-0 leading-tight text-xs text-slate-400">
+                                        <i class="mr-1 fa fa-clock"></i>
+                                        2 days
+                                      </p>
+                                    </div>
+                                  </div>
+                                </a>
+                              </mat-list-item>
+                            </mat-list>
+                          </mat-list-item>
+                      </mat-list>
+                  </div>
+              </div>
+          </nav> <!-- end Navbar-->
+
+          
+          <div class="md:pl-10 md:pr-11 p-4">
+            <div class="relative justify-between min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid rounded-xl bg-clip-border">
+              <div class="p-6 mb-0 bg-white rounded-xl flex items-center">
+                <p class="font-bold text-2xl text-gray-600">
+                  👋 Hi, John Smilga,
+                </p>
+                <span class="font-normal text-sm mt-0 font-semibold font-sans ml-1 text-gray-600">
+                  here's what's happenning with your store today.
+                </span>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-2">
+              <div class="relative min-w-0 break-words bg-white shadow-xl rounded-xl bg-clip-border md:col-span-2">
+                <div class="flex-auto p-4">
+                  <div class="flex md:flex-wrap -mx-3 justify-between">
+                    <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
+                      <div class="flex flex-col h-full">
+                        <span class="font-semibold text-gray-600 mb-4">
+                          Weekly Earnings
+                        </span>
+                        <h5 class="mb-0 font-bold text-gray-700 text-xl">P 150000</h5>
+                        <p class="text-lime-500">
+                          <i class="fa fa-arrow-up"></i> 48%
+                          <span class="text-gray-600 text-sm"> increase compare to last week</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="px-3 text-right basis-1/3">
+                      <div class="inline-block w-24 h-24 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="p-3" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><title>a</title><polygon class="cls-1 fill-white" points="18.24 92.81 18.24 56.92 13.42 53.5 8.6 56.92 8.6 92.81 18.24 92.81"/><path class="cls-1 fill-white" d="M31.94,92.81a19.23,19.23,0,0,1,1.74-5.39,25.87,25.87,0,0,1,1.48-12.2,22.5,22.5,0,0,1,1.37-2.84V50.92L31.71,47.5l-4.82,3.42V92.81Z"/><path class="cls-1 fill-white" d="M42.8,57.85a18.36,18.36,0,0,1,1.64,8.49,1.49,1.49,0,0,1,0,.21,15.51,15.51,0,0,0,11.16,0,.86.86,0,0,1,0-.16,18.43,18.43,0,0,1,1.63-8.54,15.89,15.89,0,0,0-14.4,0Zm2.38-3.38a17.36,17.36,0,0,1,9.64,0V43.17L50,39.75l-4.82,3.42v11.3Zm16,12.61a8.68,8.68,0,0,0-1.51.32c.53.54,1,1.08,1.51,1.65v-2ZM78.38,7.29A1.16,1.16,0,1,1,78.89,5l7.94,1.78a1.16,1.16,0,0,1,.88,1.39l-1.78,7.94a1.17,1.17,0,0,1-1.39.88,1.15,1.15,0,0,1-.87-1.39l1.15-5.13A298,298,0,0,1,46,31.94C34.48,37.07,23,41,13.53,41.84a1.17,1.17,0,0,1-1.26-1.06,1.15,1.15,0,0,1,1.05-1.25c9.2-.86,20.41-4.67,31.69-9.71A292.83,292.83,0,0,0,83.66,8.48L78.38,7.29ZM50,73.78a8,8,0,1,0,8,8,8,8,0,0,0-8-8Zm1.16,14.36a1.16,1.16,0,1,1-2.32,0v-.28a3.08,3.08,0,0,1-2.49-3,1.17,1.17,0,1,1,2.33,0,.76.76,0,0,0,.75.75h1.14a.76.76,0,0,0,.75-.75V83.68a.75.75,0,0,0-.75-.75H49.43a3.09,3.09,0,0,1-3.08-3.08V78.71a3.1,3.1,0,0,1,2.5-3v-.3a1.16,1.16,0,1,1,2.31,0v.29a3.08,3.08,0,0,1,2.48,3,1.17,1.17,0,0,1-2.33,0,.76.76,0,0,0-.75-.76H49.43a.81.81,0,0,0-.75.76v1.14a.76.76,0,0,0,.75.75h1.14a3.08,3.08,0,0,1,3.08,3.08v1.14a3.08,3.08,0,0,1-2.49,3Z"/><path class="cls-1 fill-white" d="M63.47,64.86A9,9,0,0,1,68,67.26,1.16,1.16,0,0,1,66.39,69a7,7,0,0,0-2.92-1.71v5.14a22.5,22.5,0,0,1,1.37,2.84,25.87,25.87,0,0,1,1.48,12.2,19.62,19.62,0,0,1,1.77,5.39h5V33.68l-4.82-3.43-4.82,3.43Z"/><polygon class="cls-1 fill-white" points="91.4 92.81 91.4 24.18 86.58 20.76 81.76 24.18 81.76 92.81 91.4 92.81"/><path class="cls-1 fill-white" d="M50,71.45a10.26,10.26,0,0,1,5.3,1.47,8.73,8.73,0,0,1,.24-3.9,17.75,17.75,0,0,1-12.82-.65,20.81,20.81,0,0,0-5.39,7.7A23.65,23.65,0,0,0,36,87.49a1.2,1.2,0,0,1-.11.61c-.47,1-2.46,5.15-1.57,6.23q.74.89,5.22-1.3a1.16,1.16,0,0,1,1,0,22.65,22.65,0,0,0,9.31,2,23.79,23.79,0,0,0,9.33-2.08,1.17,1.17,0,0,1,1,0,12.7,12.7,0,0,0,4.64,1.58c2.45.08-.38-5.5-.77-6.35a1.18,1.18,0,0,1-.14-.67,23.65,23.65,0,0,0-1.3-11.42A20.69,20.69,0,0,0,58,69c-.64,2-.85,4.19,1,5.61a1.15,1.15,0,0,1,.21,1.62,1.06,1.06,0,0,1-.29.27A10.31,10.31,0,1,1,50,71.45Z"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative min-w-0 break-wordsd bg-white shadow-xl rounded-xl bg-clip-border">
+                <div class="flex-auto p-4">
+                  <div class="flex flex-wrap -mx-3 justify-between">
+                    <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
+                      <div class="flex flex-col h-full">
+                        <span class="font-semibold text-gray-600 mb-4">
+                          No of Total Sales
+                        </span>
+                        <h5 class="mb-0 font-bold text-gray-700 text-xl">10000</h5>
+                      </div>
+                    </div>
+                    <div class="px-3 text-right basis-1/3">
+                      <div class="inline-block w-24 h-24 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fill-white p-3" data-name="Layer 1" viewBox="0 0 95 118.75" x="0px" y="0px"><defs><style>
+                          .cls-1 {
+                            fill-rule: evenodd;
+                            stroke-width: 0px;
+                          }
+                        </style></defs><path class="cls-1" d="m23.28,55.79h-6.89v17.02h6.89v-17.02h0Zm13.06-10.96h-6.89v27.97h6.89v-27.97h0Zm13.06,7.52h-6.89v20.46h6.89v-20.46h0ZM24.93,16.19c-2.38-2.38-5.66-3.85-9.29-3.85s-6.91,1.47-9.29,3.85c-2.38,2.38-3.85,5.66-3.85,9.29s1.47,6.91,3.85,9.29c2.38,2.38,5.66,3.85,9.29,3.85s6.91-1.47,9.29-3.85c2.38-2.38,3.85-5.66,3.85-9.29s-1.47-6.91-3.85-9.29h0Zm-10.4-2.36c0-.61.5-1.11,1.11-1.11s1.11.5,1.11,1.11v1.3c0,.61-.5,1.11-1.11,1.11s-1.11-.5-1.11-1.11v-1.3h0Zm8.56,2.63c.43-.43,1.13-.43,1.56,0s.43,1.13,0,1.56l-.92.92c-.43.43-1.13.43-1.56,0s-.43-1.13,0-1.56l.92-.92h0Zm4.19,7.91c.61,0,1.11.5,1.11,1.11s-.5,1.11-1.11,1.11h-1.3c-.61,0-1.11-.5-1.11-1.11s.5-1.11,1.11-1.11h1.3Zm-2.63,8.56c.43.43.43,1.13,0,1.56-.43.43-1.13.43-1.56,0l-.92-.92c-.43-.43-.43-1.13,0-1.56s1.13-.43,1.56,0l.92.92h0Zm-7.91,4.19c0,.61-.5,1.11-1.11,1.11s-1.11-.5-1.11-1.11v-1.3c0-.61.5-1.11,1.11-1.11s1.11.5,1.11,1.11v1.3h0Zm-8.56-2.63c-.43.43-1.13.43-1.56,0-.43-.43-.43-1.13,0-1.56l.92-.92c.43-.43,1.13-.43,1.56,0s.43,1.13,0,1.56l-.92.92h0Zm-4.2-7.91c-.61,0-1.11-.5-1.11-1.11s.5-1.11,1.11-1.11h1.3c.61,0,1.11.5,1.11,1.11s-.5,1.11-1.11,1.11h-1.3Zm2.63-8.56c-.43-.43-.43-1.13,0-1.56s1.13-.43,1.56,0l.92.92c.43.43.43,1.13,0,1.56s-1.13.43-1.56,0l-.92-.92h0Zm9.14,7.34s.05.07.05.11-.02.09-.05.11c-.03.03-.07.05-.11.05s-.09-.02-.11-.05c-.03-.03-.05-.07-.05-.11s.02-.09.05-.11.07-.05.11-.05.09.02.11.05h0Zm1.45,1.9l1.35,5.69c.14.59-.23,1.19-.82,1.33-.59.14-1.19-.23-1.33-.82l-1.35-5.68c-.42-.11-.8-.33-1.1-.62-.43-.43-.7-1.02-.7-1.68s.27-1.25.7-1.68c.27-.27.6-.47.97-.59l.55-3.02c.11-.6.68-1,1.28-.89.6.11,1,.68.89,1.28l-.55,3.02c.08.06.15.12.22.19.43.43.7,1.02.7,1.68s-.27,1.25-.7,1.68c-.04.04-.07.07-.11.11h0Zm70.67,28.42c-2.86-2.86-6.81-4.63-11.17-4.63s-8.31,1.77-11.17,4.63c-2.86,2.86-4.63,6.81-4.63,11.17s1.77,8.31,4.63,11.17c2.86,2.86,6.81,4.63,11.17,4.63s8.31-1.77,11.17-4.63c2.86-2.86,4.63-6.81,4.63-11.17s-1.77-8.31-4.63-11.17h0Zm-19.23-4.94c2.1-1.05,4.42-1.7,6.89-1.86v-11.78h-6.89v13.65h0Zm-8.95,22.06h-4.11v-30.35h6.89v13.37c-2.37,3.05-3.78,6.88-3.78,11.04,0,2.08.35,4.09,1.01,5.95h0Zm20.02,6.2c-.09.67-.4,1.28-.86,1.74-.54.54-1.3.88-2.13.88h-.06c-.83,0-1.58-.34-2.13-.88-.46-.46-.77-1.06-.86-1.74-1.33-.55-2.47-1.45-3.31-2.58-.98-1.32-1.56-2.95-1.56-4.71v-.03c0-.83.34-1.58.88-2.13.54-.54,1.3-.88,2.13-.88h.06c.83,0,1.58.34,2.13.88.54.54.88,1.3.88,2.13v.03c0,.5.2.96.53,1.28.33.33.78.53,1.28.53s.96-.2,1.28-.53c.33-.33.53-.78.53-1.28,0-.3-.02-.59-.08-.82-.04-.14-.11-.26-.21-.34-.42-.31-1.35-.53-2.03-.69l-.2-.05h0c-.74-.17-1.47-.35-2.22-.62-.78-.28-1.53-.64-2.23-1.16-1.01-.75-1.7-1.69-2.13-2.74-.42-1.02-.6-2.14-.6-3.29,0-1.77.58-3.4,1.56-4.71.84-1.13,1.99-2.03,3.31-2.58.09-.67.4-1.28.86-1.74.54-.54,1.3-.88,2.13-.88h.06c.83,0,1.58.34,2.13.88.46.46.77,1.06.86,1.74,1.33.55,2.47,1.45,3.31,2.58.98,1.32,1.56,2.95,1.56,4.71v.03c0,.83-.34,1.58-.88,2.13-.54.54-1.3.88-2.13.88h-.06c-.83,0-1.58-.34-2.13-.88-.54-.54-.88-1.3-.88-2.13v-.03c0-.5-.2-.96-.53-1.28-.33-.33-.78-.53-1.28-.53s-.96.2-1.28.53c-.33.33-.53.78-.53,1.28,0,.3.02.59.08.82.04.14.11.26.21.34.42.31,1.34.53,2.03.69l.2.05h0c.74.17,1.47.35,2.22.62.78.28,1.53.64,2.23,1.16,1.01.75,1.7,1.69,2.13,2.74.42,1.02.6,2.14.6,3.29,0,1.77-.58,3.4-1.56,4.71-.84,1.13-1.99,2.03-3.31,2.58h0Zm-2.19-.39c0,.22-.09.42-.23.56-.14.14-.34.23-.56.23h-.06c-.22,0-.42-.09-.56-.23-.14-.14-.23-.34-.23-.56v-.4c0-.53-.37-.97-.86-1.08-1.16-.36-2.16-1.08-2.87-2.03-.7-.94-1.12-2.12-1.12-3.39v-.03c0-.22.09-.42.23-.56.14-.14.34-.23.56-.23h.06c.22,0,.42.09.56.23.14.14.23.34.23.56v.03c0,1.11.45,2.12,1.18,2.85.73.73,1.74,1.18,2.85,1.18s2.12-.45,2.85-1.18c.73-.73,1.18-1.74,1.18-2.85,0-.46-.03-.94-.18-1.43-.17-.58-.47-1.1-1.01-1.5-.79-.59-1.97-.87-2.85-1.07l-.19-.04h0c-.69-.17-1.38-.33-1.99-.55-.58-.21-1.14-.47-1.64-.85-.67-.5-1.13-1.12-1.42-1.81-.3-.73-.43-1.56-.43-2.44,0-1.27.42-2.44,1.12-3.39.73-.97,1.75-1.7,2.93-2.05.48-.14.79-.58.79-1.06h0v-.4c0-.22.09-.42.23-.56.14-.14.34-.23.56-.23h.06c.22,0,.42.09.56.23.14.14.23.34.23.56v.4c0,.53.37.97.86,1.08,1.16.36,2.16,1.08,2.87,2.03.7.94,1.12,2.12,1.12,3.39v.03c0,.22-.09.42-.23.56-.14.14-.34.23-.56.23h-.06c-.22,0-.42-.09-.56-.23s-.23-.34-.23-.56v-.03c0-1.11-.45-2.12-1.18-2.85-.73-.73-1.74-1.18-2.85-1.18s-2.12.45-2.85,1.18c-.73.73-1.18,1.74-1.18,2.85,0,.46.03.94.18,1.43.17.58.47,1.1,1.01,1.5.79.59,1.97.86,2.85,1.07l.19.04h0c.69.17,1.38.33,1.99.55.58.21,1.14.47,1.64.85.67.5,1.13,1.12,1.42,1.82.3.73.43,1.56.43,2.44,0,1.27-.42,2.45-1.12,3.39-.73.97-1.75,1.7-2.93,2.05-.48.14-.79.58-.79,1.06h0v.4h0Zm-10.01-54.85c-.61-.03-1.08-.55-1.05-1.16.03-.61.55-1.08,1.16-1.05l6.04.32c.61.03,1.08.55,1.05,1.16,0,.1-.02.2-.06.3l-1.58,5.77c-.16.59-.77.93-1.35.77-.59-.16-.93-.77-.77-1.35l.83-3.03-23.69,15.51h0c-.35.23-.82.25-1.2,0l-12.34-7.96-12.43,11.7c-.44.42-1.14.4-1.56-.05-.42-.44-.4-1.14.05-1.56l13.06-12.29c.38-.35.94-.39,1.35-.13l12.46,8.04,22.7-14.87-2.67-.14h0Zm-6.82,51.76c.42.77.89,1.51,1.41,2.21H11.86c-.61,0-1.11-.5-1.11-1.11s.5-1.11,1.11-1.11h48.83Z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="relative min-w-0 break-wordsd bg-white shadow-xl rounded-xl bg-clip-border">
+                  <div class="flex-auto p-4">
+                    <div class="flex flex-wrap -mx-3 justify-between">
+                      <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
+                        <div class="flex flex-col h-full">
+                          <span class="font-semibold text-gray-600 mb-4">
+                            No of Total Sales
+                          </span>
+                          <h5 class="mb-0 font-bold text-gray-700 text-xl">800</h5>
+                        </div>
+                      </div>
+                      <div class="px-3 text-right basis-1/3">
+                        <div class="inline-block w-24 h-24 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="p-4 fill-white" data-name="Layer 1" viewBox="0 0 95 118.75" x="0px" y="0px"><path d="M51.26,59.337h.024a35.1,35.1,0,0,0,7.458-.82,2.414,2.414,0,0,0,1.933.972H75.834a2.421,2.421,0,0,0,2.418-2.419V54.5a2.4,2.4,0,0,0-.292-1.151,2.409,2.409,0,0,0,.292-1.152V49.629a2.421,2.421,0,0,0-2.418-2.418h-.07V44.872h4.879a2.421,2.421,0,0,0,2.418-2.418V39.885a2.421,2.421,0,0,0-2.418-2.419h-9.41a23.648,23.648,0,0,0-1.148-2.817l7.757-2.439a2.42,2.42,0,0,0,1.581-3.032l-.77-2.451a2.423,2.423,0,0,0-3.033-1.581l-9.783,3.076a30.586,30.586,0,0,0-6.915-6.071l-.051-.032a3.047,3.047,0,0,0-1.406-4.164,3.049,3.049,0,0,0-.712-2.9c3.076-6.025,3.718-10.436,1.792-12.48C57.894,1.885,56.421.956,53.64,2a5.234,5.234,0,0,0-7.53,1.5,3.833,3.833,0,0,0-3.45,1.659A4.88,4.88,0,0,0,43,10.605c.426.622.867,1.344,1.425,2.257.37.605.8,1.317,1.319,2.135a3.054,3.054,0,0,0-.766,2.958A3.055,3.055,0,0,0,43.6,22.169c-5.883,3.656-12.288,11.418-13.166,19.207a15.112,15.112,0,0,0,4.664,12.8C39.548,58.574,47.134,59.3,51.26,59.337ZM58.3,47.211V44.872H73.23v2.339Zm17.418,9.744H60.79V54.616H75.719ZM80.528,40v2.339H65.6V40ZM45.09,9.176a2.407,2.407,0,0,1-.325-2.612,1.146,1.146,0,0,1,.565-.443c0,.1,0,.2,0,.3A1.266,1.266,0,0,0,46.6,7.642h.042a1.267,1.267,0,0,0,1.224-1.308,2.712,2.712,0,0,1,5.315-.847,1.266,1.266,0,0,0,2.432-.708,5.182,5.182,0,0,0-.241-.66,1.445,1.445,0,0,1,1.334.194c.63.669.91,3.557-2.3,9.767H48.16c-.621-.98-1.124-1.8-1.575-2.539C46.008,10.6,45.552,9.851,45.09,9.176ZM32.946,41.659c.789-7,6.639-14.027,12.01-17.354.287-.178.57-.371.847-.572a3.053,3.053,0,0,0,.482.041h9.873a3.081,3.081,0,0,0,.564-.054c.283.206.572.4.866.585a27.38,27.38,0,0,1,5.606,4.748l-2.034.64a2.422,2.422,0,0,0-1.582,3.032l.771,2.451a2.416,2.416,0,0,0,3.032,1.581l4.258-1.339a22.253,22.253,0,0,1,.907,2.048H65.484a2.421,2.421,0,0,0-2.418,2.419v2.454H58.187a2.413,2.413,0,0,0-1.92.953,4.544,4.544,0,0,0-4.5-3.967h-1.09a2,2,0,1,1,0-4.009h1.09a2.007,2.007,0,0,1,2.005,2,1.267,1.267,0,0,0,2.533,0,4.544,4.544,0,0,0-3.816-4.48V31.374a1.267,1.267,0,1,0-2.533,0v1.467a4.537,4.537,0,0,0,.721,9.017h1.09a2.005,2.005,0,1,1,0,4.01h-1.09a2.007,2.007,0,0,1-2.005-2.005,1.267,1.267,0,0,0-2.533,0,4.545,4.545,0,0,0,3.817,4.48V49.81a1.267,1.267,0,1,0,2.533,0V48.343A4.546,4.546,0,0,0,55.768,46v1.327a2.421,2.421,0,0,0,2.419,2.418h.07V52.2a2.409,2.409,0,0,0,.292,1.152,2.4,2.4,0,0,0-.292,1.151v1.53a33.076,33.076,0,0,1-6.985.773c-3.745-.037-10.583-.664-14.4-4.433A12.5,12.5,0,0,1,32.946,41.659ZM85.706,62.6c-1.05-1.7-3.661-3.022-7.567-1.142a.788.788,0,0,0-.07.037,124.063,124.063,0,0,0-14.612,9.531c-3.007,2.233-4.994,3.708-7.8,4.651a15.077,15.077,0,0,1-3.383-.1c-.692-.059-1.417-.122-2.149-.166L60.7,71.929c3.914-1.289,5.127-4.26,4.593-6.633-.526-2.339-2.954-4.624-7.044-4.111A39.8,39.8,0,0,0,52,62.405c-2.236.609-3.072.837-10.275-.253-6.975-1.057-12.548.223-17.984,4.143a2.923,2.923,0,0,0-.881-.747,2.885,2.885,0,0,0-2.22-.253l-.872.254a3.011,3.011,0,0,0-.307-.223,3.237,3.237,0,0,0-2.6-.375l-5.932,1.673h0a3.157,3.157,0,0,0-2.178,3.891L14.731,91.7A3.164,3.164,0,0,0,17.76,94a3.1,3.1,0,0,0,.871-.125l3.75-1.089A3.108,3.108,0,0,0,24.556,90.4L27.5,89.57a2.931,2.931,0,0,0,2.122-3.052c.127.018.255.035.381.055l.034.005a7.737,7.737,0,0,1,2.976,1.733,20.448,20.448,0,0,0,8.79,4.314,22.238,22.238,0,0,0,4.387.416A41.814,41.814,0,0,0,59.727,90.36a1.313,1.313,0,0,0,.206-.093c2.642-1.489,8.785-7.083,14.725-12.493,3.8-3.457,7.381-6.722,9.277-8.183C86.286,67.778,87.048,64.77,85.706,62.6ZM21.675,90.353l-3.751,1.09a.6.6,0,0,1-.455-.055.625.625,0,0,1-.3-.376L11.191,69.827a.629.629,0,0,1,.428-.765l5.932-1.673a.731.731,0,0,1,.565.081.337.337,0,0,1,.171.22l3.8,21.77A.741.741,0,0,1,21.675,90.353ZM82.388,67.585c-1.978,1.525-5.6,4.824-9.436,8.317-5.492,5-11.708,10.663-14.168,12.1C43.7,93.223,38.192,89.053,34.545,86.292c-1.432-1.084-2.669-2.021-4.157-2.223-.476-.075-.959-.132-1.445-.174l-4.272-15.14c.038-.027.078-.054.115-.082,5.069-3.806,10.024-5.007,16.564-4.017,7.357,1.114,8.654.92,11.32.193a37.033,37.033,0,0,1,5.895-1.15c2.535-.318,3.965.853,4.258,2.153.262,1.165-.344,2.824-2.915,3.671L44.875,74.472c-.407.134-.906.441-1.794,1.771-.921,1.38-.921,1.666-.922,1.919a1.277,1.277,0,0,0,2.348.694c.988-1.322,4.936-.981,7.549-.756a12.809,12.809,0,0,0,4.407-.027c3.187-1.07,5.418-2.726,8.5-5.018a121.841,121.841,0,0,1,14.306-9.336c1.979-.943,3.616-.866,4.277.2C84.11,64.833,83.893,66.424,82.388,67.585ZM17.329,82.8a1.267,1.267,0,0,1-1.223-.939l-.079-.3a1.266,1.266,0,0,1,2.446-.656l.08.3a1.267,1.267,0,0,1-.9,1.551A1.285,1.285,0,0,1,17.329,82.8Zm2.934,4.789a1.266,1.266,0,0,1-.9,1.551,1.239,1.239,0,0,1-.328.044,1.268,1.268,0,0,1-1.223-.939l-.791-2.956a1.266,1.266,0,1,1,2.446-.655Z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-3 p-4">
+              <div class="flex-none w-full max-w-full md:px-3">
+                  <div class="grid md:grid-cols-3 grid-cols-1 gap-4 mt-5">
+                    <div class="bg-white p-4 rounded-lg shadow-xl">
+                      <table>
+                        <div class="flex justify-between w-full">
+                          <h5 class="font-semibold text-gray-600 mb-4">Recent Products </h5>
+                          <span class="font-sm text-sm cursor-pointer">View All <i class="fa fa-arrow-right ml-1"></i></span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">No.</mat-label>
+                            <p class="mb-0 text-xs font-semibold leading-tight py-3">1</p>
+                          </ng-container>
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">Products</mat-label>
+                            <p class="mb-0 text-xs font-semibold leading-tight py-3">1</p>
+                          </ng-container>
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">Price</mat-label>
+                            <p class="mb-0 text-xs font-semibold leading-tight py-3">1</p>
+                          </ng-container>
+                        </div>
+                      </table>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg shadow-xl md:col-span-2">
+                      <table>
+                        <div class="flex justify-between">
+                          <h5 class="font-semibold text-gray-600 mb-4">Recent Transactions</h5>
+                          <span class="font-sm text-sm cursor-pointer">
+                            View All
+                            <i class="fa fa-arrow-right ml-1"></i>
+                          </span>
+                        </div>
+                        <div class="grid md:grid-cols-5 gap-2">
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">No.</mat-label>
+                            <p class="mb-0 text-xs font-semibold leading-tight md:mt-6">1</p>
+                          </ng-container>
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">Order Details</mat-label>
+                            <div>
+                              <p class="mb-0 text-sm font-semibold leading-tight md:py-3 pb-0">Lobar Handy</p>
+                              <span class="text-sm"><i class="fa fa-clock mr-1"></i>15 Mins</span>
+                            </div>
+                          </ng-container>
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">Payments</mat-label>
+                            <div>
+                              <p class="mb-0 text-sm font-semibold leading-tight md:py-3 pb-0">Paypal</p>
+                              <span class="text-blue-600 text-sm">#416645453773</span>
+                            </div>
+                          </ng-container>
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">Status</mat-label>
+                            <p class="md:py-4 px-0 text-sm leading-normal whitespace-nowrap shadow-transparent">
+                              <span class="bg-gradient-to-tl from-green-600 to-lime-400 p-2 text-xs rounded-md inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Online</span>
+                            </p>
+                          </ng-container>
+                          <ng-container>
+                            <mat-label class="py-3 font-bold text-left uppercase bg-transparent shadow-none text-xs tracking-none whitespace-nowrap text-slate-500 opacity-70">Amount</mat-label>
+                            <p class="mb-0 text-xs font-semibold leading-tight md:py-6">$ 1,099.00</p>
+                          </ng-container>
+                        </div>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-3">
+              <div class="flex-none w-full max-w-full px-3">
+                <div class="grid md:grid-cols-3 grid-cols-1 gap-4 mt-5">
+                  <div class="bg-white p-4 rounded-lg shadow-xl md:col-span-2">
+                    <div id="hs-users-datamap">
+                      <!-- datamaps or graphs or other component -->
+                    </div>
+                  </div>
+                  
+                  <div class="bg-white p-4 rounded-lg shadow-xl">
+                    <div class="flex justify-between">
+                      <div>
+                        <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">32.4k</h5>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Users this week</p>
+                      </div>
+                      <div
+                        class="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
+                        12%
+                        <svg class="w-3 h-3 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13V1m0 0L1 5m4-4 4 4"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div id="area-chart"></div>
+                    <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+                      <div class="flex justify-between items-center pt-5">
+                        <!-- Button -->
+                        <button
+                          id="dropdownDefaultButton"
+                          data-dropdown-toggle="lastDaysdropdown"
+                          data-dropdown-placement="bottom"
+                          class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
+                          type="button">
+                          Last 7 days
+                          <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                          </svg>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div id="lastDaysdropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Yesterday</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Today</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 7 days</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 30 days</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 90 days</a>
+                              </li>
+                            </ul>
+                        </div>
+                        <a
+                          href="#"
+                          class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500  hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2">
+                          Users Report
+                          <svg class="w-2.5 h-2.5 ms-1.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+</body>
+<script src="../src/dashboard.js">
+  
+</script>
+ <!-- plugin for charts  -->
+ <script src="../src/assets/js/plugins/chartjs.min.js" async></script>
+ <!-- plugin for scrollbar  -->
+ <script src="../src/assets/js/plugins/perfect-scrollbar.min.js" async></script>
+ <!-- github button -->
+ <script async defer src="https://buttons.github.io/buttons.js"></script>
+ <!-- main script file  -->
+ <script src="../src/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
+</html>
